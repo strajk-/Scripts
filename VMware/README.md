@@ -19,4 +19,4 @@
 1. Fetches a list of all VMs with vmlist
 2. Suspends all VMs
 3. Copies all VM Folders of the suspended VMs to the %OutputDirectory% given as the Batch Parameter
-4. Starts all suspended VMs back up with vmrun as %guiMode% being "gui" or "nogui" depending if the second Batch Parameter was 1 for nogui and anything else for gui
+4. Starts all suspended VMs back up with vmrun as %guiMode% being "gui" or "nogui" depending if the second Batch Parameter was 1 for nogui or anything else for gui
