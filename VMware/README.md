@@ -2,6 +2,10 @@
 **Requirements:**
 - [VMware Tools](https://customerconnect.vmware.com/downloads/info/slug/datacenter_cloud_infrastructure/vmware_tools/12_x "VMware Tools") (Installs automatically with Workstation Pro)
 
+**ShutdownAllVMs.bat**
+1. Fetches a list of all VMs with vmlist
+2. Soft Shutdown all VMs
+
 **SuspendAllVMs.bat**
 1. Fetches a list of all VMs with vmlist
 2. Suspends all VMs
