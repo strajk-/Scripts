@@ -46,7 +46,7 @@ call powershell -noprofile -command "Set-ExecutionPolicy -ExecutionPolicy %Origi
 echo.
 echo Execution complete.
 echo If everything went well you can personalize your SSH settings in the configuration file under:
-echo %PROGRAMDATA%\ssh\sshd_config.
+echo %PROGRAMDATA%\ssh\sshd_config
 
 :End
 chdir /d "%WorkingDir%"
