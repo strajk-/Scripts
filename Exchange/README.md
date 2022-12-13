@@ -1,4 +1,4 @@
-### VMware scripts
+### Exchange scripts
 **Requirements:**
 - Powershell 4.0
 
