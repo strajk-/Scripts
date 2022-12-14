@@ -8,7 +8,7 @@
 
 **What it does:**
 1. Copies .\OpenSSH to %ProgramFiles%\OpenSSH
-2. Creates required .ssh folder and empty files in %UserProfile%\.ssh
+2. Creates required .ssh folder and empty files in %UserProfile%\\.ssh
 3. Installs OpenSSH using the PowerShell scripts shipped with the release
 4. Creates an Inbound Firewall rule at Port 22
 5. Sets the OpenSSH Server Service startup type to Automatic and starts it
