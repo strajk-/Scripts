@@ -12,8 +12,6 @@ if(!$SiteName -Or !$CertThumbprint){
 	Write-Output("Input SiteName and CertificateThumbprint as parameters to run this script")
 	Write-Output("Example: -SiteName comodo.com -CertThumbprint a909502dd82ae41433e6f83886b00d4277a32a7b")
 }else{
-	$site = Get-ChildItem -Path "IIS:\Sites" | where {( $_.Name -eq "($($SiteName))" )}
-	$binding = $site.Bindings.Collection | where {( $_.protocol -eq 'https')}
-	
+	$binding = Get-WebBinding -Name $SiteName -Protocol "https"
 	$binding.AddSslCertificate($CertThumbprint, "my")
 }
