@@ -42,7 +42,20 @@ if(!$args[0]){
 	
 	# If a newer Cert was found, deploy it to all services
 	if($CertThumbprint){
+		# Enable new Cert
 		Enable-ExchangeCertificate -Thumbprint $CertThumbprint -Services POP,IMAP,SMTP,IIS -Force
+		
+		# Get all certificates that are currently valid
+		$validCerts = Get-ExchangeCertificate -Server $Env:ComputerName | Where-Object { $_.Subject -match "CN=.*?$domain" -and $_.NotAfter -gt (Get-Date) }
+	
+		## Loop through all valid certificates and remove them, except for the newest one
+		foreach ($cert in $validCerts) {
+			if ($cert.Thumbprint -ne $CertThumbprint) {
+				# For Debug purposes
+				#Write-Output("DELETE: " + $cert.Thumbprint)
+				Remove-ExchangeCertificate -Thumbprint $cert.Thumbprint -Confirm:$false
+			}
+		}
 	}
 	
 	# For Debug purposes
